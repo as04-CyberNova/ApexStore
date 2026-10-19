@@ -1,0 +1,97 @@
+/**
+ * ApexStore Design System Tokens
+ * Source of Truth: DESIGN.md Section 2
+ * Visual Direction: Minimalist Editorial Luxe
+ */
+
+:root {
+  /* Canvas & Neutral Scales (Light / Editorial Canvas) */
+  --bg-canvas: #fafafa;           /* Base page background */
+  --bg-surface: #ffffff;          /* Product card, cart drawer & modal surface */
+  --bg-surface-subtle: #f4f4f5;   /* Secondary backgrounds, table striping, tags */
+  --bg-surface-elevated: #ffffff; /* Elevated popovers & sticky headers */
+
+  /* Hairline Borders & Dividers */
+  --border-subtle: #e4e4e7;       /* 1px light divider */
+  --border-medium: #d4d4d8;       /* Input borders & interactive controls */
+  --border-strong: #18181b;       /* Active selected pills & focus outlines */
+
+  /* Brand Primary & Accents */
+  --color-primary: #18181b;       /* Deep obsidian black for primary CTA & headers */
+  --color-primary-hover: #27272a; /* Slightly lighter obsidian for hover */
+  --color-accent: #2563eb;        /* Royal Cobalt for interactive highlights & links */
+  --color-accent-subtle: #eff6ff; /* Soft blue tint for informational banners */
+
+  /* Semantic E-Commerce Status Colors */
+  --color-success: #15803d;       /* In-stock, discount unlocked, payment success */
+  --color-success-bg: #f0fdf4;    /* Success pill background */
+  --color-warning: #b45309;       /* Low stock alert (< 5 left) */
+  --color-warning-bg: #fffbeb;    /* Warning pill background */
+  --color-danger: #b91c1c;        /* Out of stock, error, discount failed */
+  --color-danger-bg: #fef2f2;     /* Error message background */
+  --color-sale: #dc2626;          /* Sale price & discount badge */
+  --color-sale-bg: #fee2e2;       /* Sale badge background */
+
+  /* Typography Colors */
+  --text-primary: #09090b;        /* Highest contrast text */
+  --text-secondary: #52525b;      /* Descriptive body & secondary details */
+  --text-muted: #71717a;          /* Metadata, SKU, tax notices, breadcrumbs */
+  --text-inverse: #ffffff;        /* White text on dark primary buttons */
+
+  /* Typography Font Families */
+  --font-sans: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', Consolas, Menlo, Monaco, monospace;
+  --font-serif: 'Playfair Display', Georgia, serif;
+
+  /* 8pt Spatial Scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+
+  /* Radius Tokens */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
+
+  /* Elevation & Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.03);
+  --shadow-drawer: -4px 0 24px rgba(0, 0, 0, 0.12);
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-base: 250ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-drawer: 350ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Optional Midnight Dark Mode */
+[data-theme="dark"] {
+  --bg-canvas: #09090b;
+  --bg-surface: #18181b;
+  --bg-surface-subtle: #27272a;
+  --bg-surface-elevated: #27272a;
+
+  --border-subtle: #27272a;
+  --border-medium: #3f3f46;
+  --border-strong: #f4f4f5;
+
+  --color-primary: #f4f4f5;
+  --color-primary-hover: #e4e4e7;
+  --color-accent: #3b82f6;
+  --color-accent-subtle: #1e293b;
+
+  --text-primary: #fafafa;
+  --text-secondary: #a1a1aa;
+  --text-muted: #71717a;
+  --text-inverse: #09090b;
+}
