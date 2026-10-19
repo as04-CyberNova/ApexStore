@@ -1,8 +1,21 @@
-import React from 'react';
+'use client';
+
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { useCartStore } from '@/store/useCartStore';
 import styles from './Header.module.css';
 
 export function Header() {
+  const [mounted, setMounted] = useState(false);
+  const getItemCount = useCartStore((state) => state.getItemCount);
+  const openCart = useCartStore((state) => state.openCart);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const itemCount = mounted ? getItemCount() : 0;
+
   return (
     <header className={styles.header}>
       {/* Announcement Bar */}
@@ -39,9 +52,13 @@ export function Header() {
                 <path d="m21 21-4.35-4.35" />
               </svg>
             </Link>
-            <button className={styles.cartButton} aria-label="Shopping Cart">
+            <button
+              onClick={openCart}
+              className={styles.cartButton}
+              aria-label={`Shopping Cart with ${itemCount} items`}
+            >
               <span>Cart</span>
-              <span className={styles.cartBadge}>0</span>
+              <span className={styles.cartBadge}>{itemCount}</span>
             </button>
           </div>
         </div>
