@@ -16,6 +16,35 @@ export type PaymentStatus =
   | 'FAILED'
   | 'REFUNDED';
 
+export interface User {
+  id: string;
+  email: string;
+  fullName?: string | null;
+  role: UserRole;
+  phone?: string | null;
+  createdAt: string | Date;
+  updatedAt: string | Date;
+  addresses?: Address[];
+  orders?: Order[];
+  reviews?: Review[];
+  wishlists?: Wishlist[];
+}
+
+export interface Address {
+  id: string;
+  userId: string;
+  fullName: string;
+  addressLine1: string;
+  addressLine2?: string | null;
+  city: string;
+  state: string;
+  postalCode: string;
+  countryCode: string;
+  phone?: string | null;
+  isDefault: boolean;
+  createdAt: string | Date;
+}
+
 export interface Category {
   id: string;
   name: string;
@@ -23,10 +52,13 @@ export interface Category {
   description?: string | null;
   displayOrder: number;
   isActive: boolean;
+  createdAt?: string | Date;
+  products?: Product[];
 }
 
 export interface ProductImage {
   id: string;
+  productId: string;
   url: string;
   altText: string;
   isPrimary: boolean;
@@ -58,7 +90,80 @@ export interface Product {
   isActive: boolean;
   images: ProductImage[];
   variants: ProductVariant[];
-  createdAt: string;
+  reviews?: Review[];
+  createdAt: string | Date;
+  updatedAt?: string | Date;
+}
+
+export interface OrderItem {
+  id: string;
+  orderId: string;
+  variantId?: string | null;
+  productId?: string | null;
+  titleSnapshot: string;
+  skuSnapshot: string;
+  variantOptions?: string | null;
+  quantity: number;
+  unitPrice: number;
+  totalPrice: number;
+  variant?: ProductVariant | null;
+  product?: Product | null;
+}
+
+export interface ShippingAddress {
+  fullName: string;
+  addressLine1: string;
+  addressLine2?: string | null;
+  city: string;
+  state: string;
+  postalCode: string;
+  countryCode: string;
+  phone?: string | null;
+}
+
+export interface Order {
+  id: string;
+  orderNumber: string;
+  userId?: string | null;
+  customerEmail: string;
+  customerName: string;
+  shippingAddress: ShippingAddress;
+  shippingMethod: string;
+  subtotal: number;
+  taxAmount: number;
+  shippingAmount: number;
+  discountAmount: number;
+  totalAmount: number;
+  orderStatus: OrderStatus;
+  paymentStatus: PaymentStatus;
+  paymentIntentId?: string | null;
+  trackingNumber?: string | null;
+  createdAt: string | Date;
+  updatedAt: string | Date;
+  items?: OrderItem[];
+  user?: User | null;
+}
+
+export interface Review {
+  id: string;
+  productId: string;
+  userId?: string | null;
+  reviewerName: string;
+  rating: number;
+  comment: string;
+  isVerified: boolean;
+  createdAt: string | Date;
+  product?: Product;
+  user?: User | null;
+}
+
+export interface Wishlist {
+  id: string;
+  userId: string;
+  productId: string;
+  createdAt: string | Date;
+  product?: Product;
+  user?: User;
 }
 
 export interface CartItem {
