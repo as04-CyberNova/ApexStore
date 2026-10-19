@@ -104,4 +104,11 @@
   --text-secondary: #a1a1aa;
   --text-muted: #71717a;
   --text-inverse: #09090b;
+
+  /* Glassmorphism Dark 45% Tokens */
+  --glass-bg-45: rgba(24, 24, 27, 0.45);
+  --glass-bg-subtle-45: rgba(39, 39, 42, 0.45);
+  --glass-border-45: rgba(255, 255, 255, 0.12);
+  --glass-border-subtle: rgba(255, 255, 255, 0.08);
+  --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.35);
 }

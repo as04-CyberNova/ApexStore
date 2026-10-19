@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useCartStore } from '@/store/useCartStore';
+import { ThemeToggle } from '@/components/common/ThemeToggle';
 import styles from './Header.module.css';
 
 export function Header() {
@@ -46,6 +47,7 @@ export function Header() {
           </nav>
 
           <div className={styles.actions}>
+            <ThemeToggle />
             <Link href="/catalog" className={styles.actionBtn} aria-label="Search Catalog">
               <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                 <circle cx="11" cy="11" r="8" />

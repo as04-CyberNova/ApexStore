@@ -1,0 +1,26 @@
+.toggleBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  background-color: var(--glass-bg-45);
+  backdrop-filter: var(--glass-blur-sm);
+  -webkit-backdrop-filter: var(--glass-blur-sm);
+  border: 1px solid var(--glass-border-45);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.toggleBtn:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+  color: var(--text-primary);
+  border-color: rgba(255, 255, 255, 0.9);
+}
+
+[data-theme="dark"] .toggleBtn:hover {
+  background-color: rgba(39, 39, 42, 0.8);
+  border-color: rgba(255, 255, 255, 0.25);
+}
