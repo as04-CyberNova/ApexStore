@@ -1,8 +1,9 @@
 .overlay {
   position: fixed;
   inset: 0;
-  background-color: rgba(9, 9, 11, 0.45);
-  backdrop-filter: blur(4px);
+  background-color: rgba(9, 9, 11, 0.35);
+  backdrop-filter: var(--glass-blur-sm);
+  -webkit-backdrop-filter: var(--glass-blur-sm);
   z-index: 100;
   animation: fadeIn 0.2s ease-out;
 }
@@ -14,7 +15,10 @@
   bottom: 0;
   width: 100%;
   max-width: 440px;
-  background-color: var(--bg-surface);
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: var(--glass-blur-lg);
+  -webkit-backdrop-filter: var(--glass-blur-lg);
+  border-left: 1px solid var(--glass-border-45);
   box-shadow: var(--shadow-drawer);
   z-index: 101;
   display: flex;

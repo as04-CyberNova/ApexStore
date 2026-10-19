@@ -38,9 +38,12 @@
 }
 
 .orderCard {
-  background-color: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
+  background-color: var(--glass-bg-45);
+  backdrop-filter: var(--glass-blur-lg);
+  -webkit-backdrop-filter: var(--glass-blur-lg);
+  border: 1px solid var(--glass-border-45);
   border-radius: var(--radius-md);
+  box-shadow: var(--shadow-glass);
   padding: var(--space-8);
   margin-bottom: var(--space-8);
 }

@@ -3,8 +3,12 @@
   top: 0;
   z-index: 50;
   width: 100%;
-  background-color: var(--bg-surface-elevated);
-  border-bottom: 1px solid var(--border-subtle);
+  background-color: var(--glass-bg-45);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-bottom: 1px solid var(--glass-border-subtle);
+  box-shadow: var(--shadow-glass);
+  transition: all var(--transition-base);
 }
 
 .announcement {
